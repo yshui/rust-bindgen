@@ -225,7 +225,7 @@ impl<'a> StructLayoutTracker<'a> {
 
         self.latest_offset += padding_bytes;
 
-        let padding_layout = if self.is_packed || is_union {
+        let padding_layout = if is_union {
             None
         } else {
             let force_padding = self.ctx.options().force_explicit_padding;
